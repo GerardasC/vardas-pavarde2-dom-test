@@ -1,0 +1,24 @@
+{
+  "name": "vardas-pavarde2-dom-test",
+  "version": "1.0.0",
+  "description": "DOM atsiskaitymas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-unix": "node_modules/.bin/json-server --watch database.json",
+    "start-win": "node_modules\\.bin\\json-server --watch database.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GerardasC/vardas-pavarde2-dom-test.git"
+  },
+  "author": "Gerardas C",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GerardasC/vardas-pavarde2-dom-test/issues"
+  },
+  "homepage": "https://github.com/GerardasC/vardas-pavarde2-dom-test#readme",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}

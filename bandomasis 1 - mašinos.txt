@@ -23,8 +23,12 @@
       }
 
 3. Sukurkite projekto aprašymą: [1]  
-  - sugeneruokite package.json failą
-  - parsiųskite json-server biblioteką
+  - sugeneruokite package.json failą ----- npm init
+  - parsiųskite json-server biblioteką ----- npm i json-server
+                                             node_modules/.bin/json-server --watch database.json
+                                             "start-unix": "node_modules/.bin/json-server --watch database.json",
+                                             "start-win": "node_modules\\.bin\\json-server --watch database.json"
+                                             npm run start-win
   - sukurkite failą readme.md, ir jame aprašykite:
     - kokių reikia programų
     - kaip ir ką reikią suinstaliuoti
