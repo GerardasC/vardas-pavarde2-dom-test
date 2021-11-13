@@ -2,10 +2,12 @@ const baseURL = 'http://localhost:3000';
 
 class API {
   static fetchCars = (success, failure) => {
-    fetch(`${baseURL}/cars`)
+    setTimeout(() => {
+      fetch(`${baseURL}/cars`)
       .then(res => res.json())
       .then(success)
       .catch(failure)
+    }, 3000)
   };
 
   static deleteCar = (id, success, failure) => {

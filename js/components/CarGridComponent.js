@@ -12,7 +12,6 @@ class CarGridComponent {
   saveCars = (cars) => {
     this.state.cars = cars;
     this.state.loading = false;
-    console.log('1')
     this.render();
   }
 
@@ -20,17 +19,32 @@ class CarGridComponent {
     this.state.loading = true;
     this.fetchCars();
     this.htmlElement = document.createElement('div');
+    this.htmlElement.className = 'row g-3';
     this.render();
-    console.log('2')
+  }
+
+  wrapInColumn = (element) => {
+    const column = document.createElement('div');
+    column.className = 'col-12 col-sm-6 col-lg-4 col-xl-3';
+    column.appendChild(element);
+    return column;
   }
 
   render = () => {
     const { loading, cars } = this.state;
 
     if (loading) {
-      this.htmlElement.innerHTML = 'siunciama...';
+      this.htmlElement.innerHTML = '<div class="text-center"><img src="assets/loading.gif"/></div>';
+    } else if (cars.length > 0) {
+      this.htmlElement.innerHTML = '';
+      const components = cars
+      .map(x => new CarCardComponent(x))
+      .map(x => x.htmlElement)
+      .map(this.wrapInColumn);
+      console.log(components)
+      this.htmlElement.append(...components);
     } else {
-      this.htmlElement.innerHTML = 'parsiusta'
+      this.htmlElement.innerHTML = `<h2>Šiuo metu mašinų nėra</h2>`;
     }
   }
 }
